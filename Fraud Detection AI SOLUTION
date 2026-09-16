@@ -1,0 +1,58 @@
+What is the business problem?
+The business problem I'll be working on is fraud detection (Financial fraud) because it is closest to my major and focus area (AI Methods and applications/cybersecurity). Fraud detection is basically the process of detecting scams or fraud before a transaction happens and the money gets stolen. Financial fraud happens when hackers steal customers account information and take their money. The problem is humans can’t just review every single transaction made to detect fraud.
+
+Why is this problem important to the organization?
+This problem is really important to organizations because they have to pay back what's been stolen from the customer which lowers their overall profit. Customers will also lose trust in the organizations which causes them to not be customers anymore. Its also a hassle to the employees, mainly the security team to deal with all of this. All of this just ruins an organization's reputation which should be very important to them. So fixing this problem should keep the customers safe, and protect the company's money and reputation.
+
+Who is affected by this problem?
+Customers, Employees, Managers, Security team, Finance department
+
+What data would you need? All transaction logs including past one, the transaction type, the amount, and maybe something that shows if the past transactions were fake.
+
+Where could the data come from? I can get it from kaggle datasets and a banks transcation history records.
+
+How much historical data might be useful? About a month of transactions just to see the customers habits to help catch things out of the ordinary later.
+
+What would be the most important variables? The transactions and the transfers most importantly because that's where most scams or fraud happen. Also the amount and the time they happen is important.
+
+What could be missing or inaccurate? IP addresses, device locations, and device types.
+
+What information would you give the model?
+5 features:
+Transaction times
+Transaction types
+Amounts
+Accounts they send to
+Accounts that receive it
+
+What would you want the model to determine? Whether the transaction is a fraud or a real one.
+
+Would you use supervised or unsupervised learning?
+x Supervised Learning
+☐ Unsupervised Learning
+☐ Not sure
+I chose supervised because I already have a history of transaction records that are labeled as a fraud or not. The ai model can just look at these records and figure out/see the patterns that go on when fraud happens.
+
+Would the problem involve classification or prediction?
+x Classification
+☐ Prediction
+☐ Both
+☐ Neither
+I’d say this problem involves classification because the main goal would be to put the transactions into two groups, one fraud and one real. I think classification is the best choice here because the answer would notify or tell the security team right away if a transaction is fraud or not.
+
+Identify three possible data-quality problems.
+- Missing information - For the data set i’m using, a lot of important information is missing like device location or ip addresses.
+- Outdated information - Hackers or scammers can alway find new tricks or scams, so the ai wouldn't know how to track the new scams. It would only know how to track the old ones that hackers don't use anymore.
+- Data imbalance - The amount of fraud is very low to the point where it gets very hard to catch. For example, the one in the kaggle data set I'm using says out of 100 transactions, 0.02% are fraud.
+
+What could happen if the data is poor?
+Well if the data is messy or inaccurate, the AI will just learn wrong patterns and make bad choices. It might miss scams which means customers would lose money and trust in the business. It can also flag real transactions as scams which can cause problems for the customer. All of this will just hurt the business and the customers.
+
+AI Solution Summary
+Business Problem: Fraud detection, finding and stopping fraud transactions before money gets stolen.
+Data Needed: All transaction logs, transaction types, amounts.
+Type of Learning: Supervised because I have data of all transactions, both real and fraud.
+Classification or Prediction?: Classification, the model can classify transactions as real or fraud.
+Data Quality Problems: Missing information, Outdate information, Data imbalance.
+Business Benefit: Stops fraud transactions, saves money, earns customers trust.
+Potential Risk: Stops real transactions thinking it's fraud which annoys customers.
