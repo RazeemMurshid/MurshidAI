@@ -2,33 +2,34 @@ AI Problem: Fraud detection
 
 # What are the features?
 Features:
-- IP Address (if its available), Device info (Any kind like location, type, ect...)
-- Transaction time, Transction type, and Amount
-- The account number that sent and the account number that recieved
+- IP address (if available), device type, and location data.
+- Timestamp, transaction type, and monetary amount.
+- Sender account number and recieving account number.
 
 # Identify the information that the model could use as inputs.
-What is the label?
-- It can label them as binary numbers. For example, it can label fraud transactions as "1" and legit transactions as "0".
+What is the label
+?The model uses a binary classification label: 0 = Legit transaction and 1 = Fraud transaction.
 
 # What outcome should the model learn to predict?
 What would training data contain?
-It can contain a history of all transactions (including both current and previous ones), all the input features, and the label showing which is fraud and which is legit.
+History of all transactions (including both current and previous ones), all the input features, and the labels showing which is fraud and which is legit.
 
 Why should testing data be kept separate?
-It should be kept seperate to see how well the model detects fraud from new datasets. If you just test it on the old data set, it might just learn the accounts the scam and not the ways they use.
+Testing data is kept separate to evaluate how well the model does with new data. Testing on training data leads to high performance metrics because the model simply memorizes specific account details rather than learning the fraud patterns.
 
 What could be a false positive?
-Detecting a legit transaction as fraud
+Identifying a legit transaction as fraud
 
 What could be a false negative?
-Detecting a fraud transcation as legit
+Identifying a fraud transcation as legit
 
 Would precision or recall be more important?
 Explain your reasoning.
-Id say recall is more important becuase if it detects a transaction as fraud while its legit, it wouldnt really hurt anyone (It would just be an inconvenience to the customer). But if it detects a fraud transaction as legit, then both the customer and business are hurt financially and maybe even emotionally as losing money is very stressful. It just better to detect a legit transaction as fraud and cause a minor inconveniance then detecting fraud as legit and losing a bunch of money. 
+Recall is more important for this use case. A false positive creates a small inconvenience for the customer (like verifying identity or confirming a charge). On the other hand, a false negative results in direct financial loss and severe distress for both the customer and the business. So prioritizing recall ensures as much fraud is caught as possible, while also minimizing overall financial risk.
 
 What types of poor-quality data could affect this model?
-Missing data like ip addresses or device type and location. Also, old datasets can be a problem becasue scammers always change their tactics so an AI model learning from the old datasets can miss fraud because they wouldn't be able to detect the new tacticstitanic.
+Missing Data: Incomplete records (such as missing IP addresses or device information) reduce the contextual information available to the model.
+Outdated Data: Fraud tactics change constantly. So training on outdated datasets limits the models ability to detect new fraud techniques.
 
 What could cause this model to overfit?
 A couple things actually can cause it to overfit. One thing would be it memorizing the accounts and not the clues and tactics the scammers actually use. Another thing is if the data it uses is old, it won't be able to detect the new tactics people use for fraud.
