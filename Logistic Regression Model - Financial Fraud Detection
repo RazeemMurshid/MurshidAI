@@ -52,3 +52,16 @@ model.fit(X_train, y_train)
 
 #Making the prediction
 y_pred = model.predict(X_test)
+
+
+MODEL EVALUATION:
+Accuracy: 99.90%
+Precision: 0.81 (When the model flagged a transaction as fraud, it was correct 81% of the time)
+Recall: 0.52 (The model caught 52% of all actual fraud cases)
+F1-Score: 0.63 (A balanced mean of precision and recall)
+
+CONFUSION MATRIX:
+True Negatives: 56,852 (Legit transactions correctly identified as legit)
+False Positives: 12 (Legit transactions incorrectly flagged as fraud)
+False Negatives: 47 (Fraud transactions missed and flagged as legit)
+True Positives: 51 (Fraud transactions correctly identified as fraud)
