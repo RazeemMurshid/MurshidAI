@@ -1,0 +1,68 @@
+OVERVIEW:
+Objective: Use the pretrained Generative AI models (FLAN-T5, GPT-2, and Stable Diffusion) to solve  business problems, generate marketing assets, and evaluate model performance and limitations.
+Google Colab Code Links:
+FLAN-T5 - https://colab.research.google.com/drive/13OMjVRhEmFpP6M4wuO248B0ZmG_LZ0p6?usp=sharing
+GPT-2 - https://colab.research.google.com/drive/1MPlct9goghsQdI41c0N-D4bvm2FB9vzt?usp=sharing
+Stable Diffusion - https://colab.research.google.com/drive/1POU6APliYJQgAq-1EpGwq3XD1nhCC0aI?usp=sharing
+
+
+TEXT SUMMARIZATION (FLAN-T5):
+
+#Input Business Report
+PNC bank opened a new branch in Harrisburg PA. The branch quickly gained a lot of customers. The increase of customers resulted in customers complaining about wait times. In branch customer complaints about long wait times increased by 30 percent. Customers showed their frustration with manual paperwork required for opening basic checking accounts. In April, the bank created a new mobile app allowing digital ID verification and allowing people to instantly create accounts. By June, there were 45000 app downloads and active users. In branch transaction volume for deposits decreased by 25 percent as customers changed to mobile check deposit. Customer satisfaction scores rose by 18 percent overall due to reduced wait times and streamlined digital onboarding. The problem is older groups of people reported difficulty using the new online user interface. The bank plans to create assisted mobile kiosks and staff training in branches by September to support those older customers.
+
+#Prompt and Code Setup
+Prompt: 'Summarize this business report into 3 bullet points: + report`
+Model Parameters: `max_new_tokens=400`, `do_sample=False`
+
+#Output and Evaluation
+Generated Output: "Bank of Pennsylvania has opened a new branch in the United States."
+Evaluation: The model did not preserve all the key information. It only stated that a bank opened in the US and incorrectly changed the name. Changing the prompt and `max_new_tokens` gave me the exact same output every time.
+
+
+TEXT GENERATION (GPT-2):
+
+#Prompt 1 Test
+Prompt: `Opening your first bank account should be simple, secure, fast, and `
+Parameters: `max_new_tokens=200`, `do_sample=True`, `temperature=0.7`, `top_k=50`
+Output: Opening your first bank account should be simple, secure, fast, and easy to manage. The best part is that it won't take you long to start your banking account. In fact, if you are getting started, you don't even need to worry about any additional fees. 2. Choose a Bank Account that Has A Bank Account If you are already working at a bank, you might consider setting up a bank account without having to worry about paying fees or other charges. There are a few options, but the most common is a personal account, or a personal bank account. A personal bank account is a small bank account that can be used for short-term financial transactions. It is a savings account that allows you to get things done from your own personal bank account. The key to a bank account is that it can be used for short-term transactions like buying and selling stocks, building houses, or purchasing cars. Many people do not have a personal bank account, and it is very easy to change your bank account. 3. Add.
+
+#Prompt 2 Test
+Prompt: `Managing your personal finances on the go is easier than ever with `
+Parameters: `max_new_tokens=200`, `do_sample=True`, `temperature=0.7`
+Output: Managing your personal finances on the go is easier than ever with our comprehensive financial planning tool. We've been through a lot of financial crises, especially ones like the Great Recession. We've been told that the Great Recession was a real, real crisis, and they didn't have the resources to do anything about it and they never had to do anything about it. But, well, I guess it's been a short window of time until we're able to do something about it. This is one of those moments where the problem is that not everyone gets it right. What we want to do is create a way to help everybody. We need to be able to make sure that every single person has access to their personal financial information. But, as soon as we have something that is free, we can start to say, 'This is our personal finance plan. This is our plan. This is our plan.' And that's how we can save money. So, we're going to have to do something about that. So.
+
+#Comparison & Usefulness
+Temperature was set to 0.7 to try and generate more relevant topics.
+Prompt 1 is a lot more useful because it stayed on topic and focused on consumer banking features.
+Prompt 2 started off its first sentence very well, but completely lost its marketing tone and went off topic when is started talking about the Great Recession.
+
+
+IMAGE GENERATION (STABLE DIFFUSION):
+
+#Prompt 1 Test
+Prompt: `A bright, nice looking modern bank branch exterior with glass walls, sunlight, clean design, orange colored logo that says PNC, architectural photography, high quality`
+Result: It generated a basic white building with minimal glass, unexpected parking spaces, and a blurry orange logo trying to spell "PNC".
+Observation: It shows how the model struggles to render specific text accurately.
+
+#Prompt 2 Test
+Prompt: `A modern bank building exterior, clean glass walls, clean architectural design, sunset, professional architectural photography, high quality`
+Result: Produced a much cleaner, modern design with glass walls (though it completely ignored the "sunset" keyword and generated regular sunlight). It resembles a Capital One bank in Tysons, Virginia.
+Preference: Prompt 2 is preferred because it followed the prompt more accurately.
+
+
+EVALUATION:
+
+Which model generated the most useful output?
+GPT-2s second prompt approach was structured, but FLAN-T5 and Stable Diffusion weren't good, hallucinated, and missed prompt constraints (like FLAN-T5 renaming the bank and Stable Diffusion missing the sunset keyword). Overall, GPT-2 performed the best here.
+
+How did changing prompts affect outputs?
+In GPT-2, little adjustments to the sentences beginnings shifted the model behavior. In Stable Diffusion, modifying lighting and architectural goals changed the aesthetic quality, but lighting instructions seem to be too challenging.
+
+Model Limitations and Errors:
+Stable Diffusion struggled with rendering text and brand logos correctly. GPT-2 tends to hallucinate and drift off topic, and it tends to do this more when max tokens are set higher.
+
+Real Business Use and Human Review:
+I think the outputs cannot be used directly in a real business without human review. A human reviewer is 100% necessary to rewrite generated text, make sure its safe and factually accurate, and correct hallucinations in summaries and responses.
+
+
