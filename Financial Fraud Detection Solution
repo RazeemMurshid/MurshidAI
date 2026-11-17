@@ -1,0 +1,50 @@
+What is the business problem?
+The business problem being is financial fraud detection. Fraud detection is the process of identifying scams before a transaction takes place and money id stolen. Financial fraud happens when unauthorized actors compromise customer account information to misappropriate funds. This is a major operational challenge because human review cannot scale to evaluate every single transaction in real time.
+
+Why is this problem important to the organization?
+This problem is important because financial institutions usually have to reimburse stolen funds, which directly decreases overall profit. Also, victims of fraud lose trust in the organization which leads to customer churn and brand damage. Dealing with compromised accounts places a heavy burden on internal teams, specificly the security and fraud departments. Securing transactions protects customers, preserves capital, and safeguards the companys reputation.
+
+Who is affected by this problem?
+Customers, Employees, Managers, Security team, Finance department
+
+DATA NEEDED: All historical transaction logs, transaction types, monetary amounts, and labels indicating whether past transactions were fraudulent.
+
+Where could the data come from? Publicly available datasets (such as Kaggle) and bank transaction history records.
+
+How much historical data might be useful? About a month of transaction history to establish baseline customer behavioral habits and detect things out of the ordinary.
+
+What would be the most important variables? Transfers and payment transactions, along with the amount and timestamp.
+
+What could be missing or inaccurate? IP addresses, device locations, and device types.
+
+What information would you give the model?
+1. Transaction times
+2. Transaction types
+3. Amounts
+4. Sender account number
+5. Recieving account number
+
+What would you want the model to determine? Whether a transaction is fraud or legit
+
+Would you use supervised or unsupervised learning?
+Learning Model: Supervised
+historical transaction records are already labeled as fraudulent or legitimate. The AI model can analyze these historical records to recognize patterns and indicators associated with fraud activity.
+
+Would the problem involve classification or prediction?
+I’d say this problem involves classification because the primary objective is to categorize transactions into two distinct groups, fraud or legit. Classification is a great chouce here because the model can immediately alert the security team when a transaction is flagged as high risk
+
+Three possible data-quality problems:
+- Missing information - Important info like device location or IP addresses are frequently missing from transactional data.
+- Outdated information - Hackers or scammers continuously invent new tactics, so the model may fail to recognize the newer scam methods that are not represented in past data.
+- Data imbalance - Fraud transactions represent a very small fraction of total transactions (Only 0.02% in the dataset im using), which makes them statistically difficult for models to capture accurately.
+
+What could happen if the data is poor?
+If the data is messy or inaccurate, the AI will learn incorrect patterns and make bad/incorrect decisions. It may fail to detect newer scams, which will result in financial loss and decrease customer trust. ALso, it might incorrectly flag legit transactions as fraud, which will create bad user experiences. Overall, poor data quality degrades both business performance and customer satisfaction.
+
+Business Problem: Financial fraud detection. Identifying and stopping fraudulent transactions before funds are lost.
+Data Needed: Transaction logs, transaction types, amounts, and historical transaxtions/labels
+Type of Learning: Supervised learning using labeled historical transaction records.
+Classification or Prediction?: Classification. Categorizing transactions as either legit or fraud.
+Data Quality Problems: Missing information, Outdate information, Data imbalance.
+Business Benefit: Prevents financial fraud, reduces financial losses, and maintains customer trust.
+Potential Risk: High false-positive rates can incorrectly stop legitimate transactions and inconvenience customers.
