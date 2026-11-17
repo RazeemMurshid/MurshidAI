@@ -2,7 +2,7 @@ DATASET:
 Name: Credit Card Fraud Detection (KAGGLE)
 Link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 Rows and Columns: 284807 rows, 31 columns
-Discription: This dataset contains credit card transactions made by european cardholders in September 2013, with a total of 492 fraudulent transactions out of 284,807 records.
+Description: This dataset contains credit card transactions made by european cardholders in September 2013, with a total of 492 fraudulent transactions out of 284,807 records.
 
 
 UNDERSTANDING THE DATASET:
