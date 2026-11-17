@@ -1,0 +1,54 @@
+DATASET:
+Name: Credit Card Fraud Detection (KAGGLE)
+Link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+Rows and Columns: 284807 rows, 31 columns
+Discription: This dataset contains credit card transactions made by european cardholders in September 2013, with a total of 492 fraudulent transactions out of 284,807 records.
+
+
+UNDERSTANDING THE DATASET:
+Each row: A single credit card transaction made.
+Most important and useful columns: Time, Amount, and V1 through V28.
+Target variable: Class (0 for legit, 1 for fraud)
+Class distribution: Most of the transactions belogn to the legit class, with only a tiny percentage belonging to the fraud class.
+
+
+FEAUTURES AND TARGET:
+Features: Time, Amount, and V1 through V28.
+Target: Class (0 = legit and 1 = fraud).
+
+
+TRAINING AND TESTIING DATA SPLIT:
+Train/Test Split: The dataset was split into an 80/20 ratio (80% for training data, 20% for testing data).
+Why we seperate them: Testing data needs to be kept separate to evaluate how well the model does with new data, which prevents the model from simply memorizing training patterns and helps avoid overfitting.
+
+
+LOGISTIC REGRESSION MODEL:
+
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+#Loading the Dataset
+df = pd.read_csv("/content/drive/MyDrive/AI100/FraudDetection.csv")
+
+#Defining Features and Target
+features = [
+    "Time", "Amount", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8",
+    "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18",
+    "V19", "V20", "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28"
+]
+
+X = df[features]
+y = df["Class"]
+
+#Spliting the Data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
+
+#Creating and Training the Model
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+#Making the prediction
+y_pred = model.predict(X_test)
