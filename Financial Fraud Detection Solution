@@ -20,7 +20,7 @@ What could be missing or inaccurate? IP addresses, device locations, and device 
 What information would you give the model?
 1. Transaction times
 2. Transaction types
-3. Amounts
+3. The amounts
 4. Sender account number
 5. Recieving account number
 
