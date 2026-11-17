@@ -1,0 +1,57 @@
+DATASET AND VARIABLES:
+
+| Customer | Website Visits | Amount Spent ($) |
+| -------- | -------------: | ---------------: |
+|     1    |       2        |        25        |
+|     2    |       3        |        32        |
+|     3    |       4        |        38        |
+|     4    |       5        |        45        |
+|     5    |       6        |        52        |
+|     6    |       7        |        58        |
+|     7    |       8        |        65        |
+|     8    |       9        |        70        |
+|     9    |       10       |        78        |
+|     10   |       11       |        85        |
+
+Independent Variable: Number of Website Visits
+Dependent Variable: Amount Spent
+
+
+CODE FOR LINEAR REGRESSION:
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+X = np.array([2, 3, 4, 5, 6, 7, 8, 9, 10, 11]).reshape(-1, 1)
+
+y = np.array([25, 32, 38, 45, 52, 58, 65, 70, 78, 85])
+
+#Creating and training the model
+model = LinearRegression()
+model.fit(X, y)
+
+#Output Intercept and Slope
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_[0])
+
+#Predicting amount spent when visits = 12
+visits_to_predict = np.array([[12]])
+predicted_spend = model.predict(visits_to_predict)
+print("Predicted spending for 12 visits: $", predicted_spend[0])
+
+# Calculating R-squared
+print("R-squared:", model.score(X, y))
+
+
+RESULTS:
+Intercept: 11.94S
+lope: 6.59
+R-squared Value: 0.9993
+
+
+PREDICTION FOR 12 VISITS:
+Predicted Amount Spent: $91.07
+
+
+MY RECOMMENDATION:
+I recommend that the company actively try to increase the number of website visits. I say this beacuse the models slope is about 6.59, which means that for every additional website visit a customer makes, they spend about $6.59 more. ALso, the R-squared value is very close to 1 which means it has a almost perfect linear relationship between website visits and customer spending. 
