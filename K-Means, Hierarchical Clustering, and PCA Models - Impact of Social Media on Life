@@ -4,7 +4,7 @@ Link: https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-
 Description: This dataset represents the impact of social media on life and how digital engagement shapes daily life and well being, and it has records from 4,500 students ranging from high school to postgraduate studies.
 
 
-DATA PREPERATION AND STANDARIZATION:
+DATA PREPERATION AND STANDARDIZATION:
 Features: Age, Daily_Usage_Hours, Sleep_Duration_Hours
 Why I chose these feautures: These features are relevant numeric indicators for analyzing a students lifestyle behaviors, routines, and physical habits.
 Why Standardization is important: Models like K Means rely on distance measurements. So without scaling, features with larger numeric ranges would jsut dominate the distance calculation and mess up the results. Standardization changes the features to have a mean of 0 and a standard deviation of 1, which makes sure every feature contributes equally.
